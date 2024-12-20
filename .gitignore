@@ -394,3 +394,6 @@ FodyWeavers.xsd
 *appsettings.Staging.json
 
 *profile.arm.json
+
+# Ignore SQL Lite Db
+*app.db
