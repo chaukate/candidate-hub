@@ -1,3 +1,4 @@
+using CandidateHub.Application;
 using CandidateHub.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ builder.Configuration.AddJsonFile($"appsettings.{builder.Environment}.json", opt
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Environment, builder.Configuration);
 
 var app = builder.Build();

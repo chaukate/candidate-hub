@@ -2,9 +2,7 @@
 
 namespace CandidateHub.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CandidatesController : ControllerBase
+    public class CandidatesController : BaseController
     {
         [HttpGet]
         public async Task<IActionResult> List(CancellationToken cancellationToken)
