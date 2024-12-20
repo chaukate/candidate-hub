@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -30,6 +31,19 @@ namespace CandidateHub.Infrastructure
                     Title = $"Candidate Hub - {_webHostEnv.EnvironmentName}"
                 });
                 options.CustomSchemaIds(c => c.FullName);
+            });
+        }
+
+        public static void AddInfrastructureApplication(this IApplicationBuilder app)
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Candidate Hub");
+                    options.RoutePrefix = "swagger";
+                });
             });
         }
     }

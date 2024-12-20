@@ -11,6 +11,8 @@ builder.Services.AddInfrastructure(builder.Environment, builder.Configuration);
 
 var app = builder.Build();
 
+app.AddInfrastructureApplication();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
