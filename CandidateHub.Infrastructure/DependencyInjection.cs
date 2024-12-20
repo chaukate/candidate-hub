@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CandidateHub.Application.Interfaces;
+using CandidateHub.Infrastructure.Persistence;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,8 @@ namespace CandidateHub.Infrastructure
             _configuration = configuration;
 
             services.AddSwagger();
+
+            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
         }
 
         private static void AddSwagger(this IServiceCollection services)
