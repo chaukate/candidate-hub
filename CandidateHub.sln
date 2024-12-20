@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Api", "CandidateHub.Api\CandidateHub.Api.csproj", "{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Api", "CandidateHub.Api\CandidateHub.Api.csproj", "{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Infrastructure", "CandidateHub.Infrastructure\CandidateHub.Infrastructure.csproj", "{81911905-FB04-475B-BBCB-2EB57D890BD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81911905-FB04-475B-BBCB-2EB57D890BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81911905-FB04-475B-BBCB-2EB57D890BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81911905-FB04-475B-BBCB-2EB57D890BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81911905-FB04-475B-BBCB-2EB57D890BD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
