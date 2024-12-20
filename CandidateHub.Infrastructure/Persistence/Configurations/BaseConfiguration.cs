@@ -9,7 +9,6 @@ namespace CandidateHub.Infrastructure.Persistence.Configurations
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.Property(p => p.Id)
-                .UseIdentityColumn(1, 1)
                 .ValueGeneratedOnAdd()
                 .IsRequired();
             builder.HasKey(h => h.Id);

@@ -2,9 +2,11 @@
 using CandidateHub.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace CandidateHub.Infrastructure
 {
@@ -21,6 +23,11 @@ namespace CandidateHub.Infrastructure
             _configuration = configuration;
 
             services.AddSwagger();
+
+            services.AddDbContext<ChDbContext>(options =>
+            {
+                options.UseSqlite(configuration.GetConnectionString("CHub"));
+            });
 
             services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
         }

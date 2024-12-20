@@ -5,11 +5,11 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Api", "CandidateHub.Api\CandidateHub.Api.csproj", "{F3EF5638-77BB-4EB8-AF24-BF6EA7EA94B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Infrastructure", "CandidateHub.Infrastructure\CandidateHub.Infrastructure.csproj", "{81911905-FB04-475B-BBCB-2EB57D890BD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Infrastructure", "CandidateHub.Infrastructure\CandidateHub.Infrastructure.csproj", "{81911905-FB04-475B-BBCB-2EB57D890BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Domain", "CandidateHub.Domain\CandidateHub.Domain.csproj", "{B40F1F4C-873D-494B-86BE-FA28ED681B27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Domain", "CandidateHub.Domain\CandidateHub.Domain.csproj", "{B40F1F4C-873D-494B-86BE-FA28ED681B27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Application", "CandidateHub.Application\CandidateHub.Application.csproj", "{8737F0F5-9F24-4361-AD1C-2C64262E04D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Application", "CandidateHub.Application\CandidateHub.Application.csproj", "{8737F0F5-9F24-4361-AD1C-2C64262E04D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
