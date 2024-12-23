@@ -396,4 +396,4 @@ FodyWeavers.xsd
 *profile.arm.json
 
 # Ignore SQL Lite Db
-*app.db
+*app.db*
