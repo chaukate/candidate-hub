@@ -1,5 +1,7 @@
 ﻿using CandidateHub.Application.Candidates.Commands;
+using CandidateHub.Application.Candidates.Queries;
 using CandidateHub.Application.Common.Exceptions;
+using CandidateHub.Application.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CandidateHub.Api.Controllers
@@ -9,9 +11,11 @@ namespace CandidateHub.Api.Controllers
         public CandidatesController(ILogger<CandidatesController> logger) : base(logger) { }
 
         [HttpGet]
-        public async Task<IActionResult> List(CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(PageResponse<ListCandidatesResponse>), 200)]
+        public async Task<IActionResult> List([FromQuery] ListCandidatesQuery query, CancellationToken cancellationToken)
         {
-            return Ok();
+            var response = await Mediator.Send(query, cancellationToken);
+            return Ok(response);
         }
 
         [HttpPost]
