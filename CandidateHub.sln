@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Domain", "Cand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidateHub.Application", "CandidateHub.Application\CandidateHub.Application.csproj", "{8737F0F5-9F24-4361-AD1C-2C64262E04D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandidateHub.Test", "CandidateHub.Test\CandidateHub.Test.csproj", "{4C6258C5-2E41-4D8C-AA12-9AB58DE5AE59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8737F0F5-9F24-4361-AD1C-2C64262E04D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8737F0F5-9F24-4361-AD1C-2C64262E04D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8737F0F5-9F24-4361-AD1C-2C64262E04D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6258C5-2E41-4D8C-AA12-9AB58DE5AE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6258C5-2E41-4D8C-AA12-9AB58DE5AE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6258C5-2E41-4D8C-AA12-9AB58DE5AE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6258C5-2E41-4D8C-AA12-9AB58DE5AE59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
