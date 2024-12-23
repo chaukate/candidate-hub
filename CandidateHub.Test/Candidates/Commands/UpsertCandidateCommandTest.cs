@@ -116,13 +116,15 @@ namespace CandidateHub.Test.Candidates.Commands
                                    "Invalid linkedin url.",
                                    "Invalid github url.",
                                    "Minimum character limit is 25."})]
-        [InlineData($"firstname-{LongString256}", $"lastname-{LongString256}", $"email_{LongString256}@test.com", "9888555510", "9 AM - 6 PM", "This is a test comments.", $"git-{LongString256}", $"git-{LongString256}",
+        [InlineData($"firstname-{LongString256}", $"lastname-{LongString256}", $"email_{LongString256}@test.com", "9888555510", "9 AM - 6 PM", $"This is a test comments. {LongString256}", $"git-{LongString256}", $"git-{LongString256}",
                     new string[] { "Maximum character limit is 255.",
                                    "Maximum character limit is 255.",
                                    "Maximum character limit is 255.",
+                                   "Invalid linkedin url.",
                                    "Maximum character limit is 255.",
-                                   "Maximum character limit is 255."})]
-        [InlineData("firstname", "lastname", "email@candidate.com", "9888555522", "9 AM - 6 PM", "This is a test comments.", "https://github.com/username", "https://linkedin.com/in/username",
+                                   "Invalid github url.",
+                                   "Maximum character limit is 255.",})]
+        [InlineData("firstname", "lastname", "email@candidate.com", "9888555522", "9 AM - 6 PM", $"This is a test comments.{LongString256}", "https://github.com/username", "https://linkedin.com/in/username",
                     new string[] { })]
         public async Task UpsertCandidateValidator_Test(string firstName,
                                                         string lastName,

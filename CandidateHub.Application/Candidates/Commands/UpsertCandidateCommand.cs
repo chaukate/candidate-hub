@@ -128,8 +128,6 @@ namespace CandidateHub.Application.Candidates.Commands
                 .When(w => !string.IsNullOrEmpty(w.CallTimeInterval));
 
             RuleFor(r => r.LinkedInUrl)
-                .MaximumLength(255)
-                .WithMessage("Maximum character limit is 255.")
                 .Must(m =>
                 {
                     if (Uri.TryCreate(m, UriKind.Absolute, out var url))
@@ -138,11 +136,11 @@ namespace CandidateHub.Application.Candidates.Commands
                     return false;
                 })
                 .WithMessage("Invalid linkedin url.")
+                .MaximumLength(255)
+                .WithMessage("Maximum character limit is 255.")
                 .When(w => !string.IsNullOrEmpty(w.LinkedInUrl));
 
             RuleFor(r => r.GitHubUrl)
-                .MaximumLength(255)
-                .WithMessage("Maximum character limit is 255.")
                 .Must(m =>
                 {
                     if (Uri.TryCreate(m, UriKind.Absolute, out var url))
@@ -151,6 +149,8 @@ namespace CandidateHub.Application.Candidates.Commands
                     return false;
                 })
                 .WithMessage("Invalid github url.")
+                .MaximumLength(255)
+                .WithMessage("Maximum character limit is 255.")
                 .When(w => !string.IsNullOrEmpty(w.GitHubUrl));
 
             RuleFor(r => r.Comments)
