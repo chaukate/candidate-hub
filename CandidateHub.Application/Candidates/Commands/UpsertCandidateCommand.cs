@@ -1,4 +1,5 @@
-﻿using CandidateHub.Application.Interfaces;
+﻿using CandidateHub.Application.Common.Exceptions;
+using CandidateHub.Application.Interfaces;
 using CandidateHub.Domain.Entities;
 using FluentValidation;
 using MediatR;
@@ -16,7 +17,15 @@ namespace CandidateHub.Application.Candidates.Commands
 
         public async Task<int> Handle(UpsertCandidateCommand request, CancellationToken cancellationToken)
         {
-            var dbCandidate = await _candidateRepo.FindAsync(p => p.Email.ToLower() == request.Email.ToLower(), cancellationToken);
+            var dbCandidate = await _candidateRepo.GetByIdAsync(request.Id, cancellationToken);
+
+            if (request.Id > 0 && dbCandidate == null)
+                throw new BadRequestException("Candidate id is incorrect.");
+
+            if (await _candidateRepo.AnyAsync(a => (request.Id == 0 || dbCandidate.Email.ToLower() != request.Email.ToLower())
+                                                   && a.Email.ToLower() == request.Email.ToLower(), cancellationToken))
+                throw new BadRequestException("Candidate already registered with email address.");
+
             if (dbCandidate == null)
             {
                 dbCandidate ??= new Candidate();
@@ -56,6 +65,7 @@ namespace CandidateHub.Application.Candidates.Commands
 
     public class UpsertCandidateCommand : IRequest<int>
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

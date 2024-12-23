@@ -7,6 +7,7 @@ namespace CandidateHub.Application.Interfaces
     {
         Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
         Task<TEntity> GetByIdAsync(TKey id, CancellationToken cancellationToken);
+        Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken);
         Task<TKey> AddAsync(TEntity entity, CancellationToken cancellationToken);
         Task<bool> UpdateAsync(TEntity entity, CancellationToken cancellationToken);
     }

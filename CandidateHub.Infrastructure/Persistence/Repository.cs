@@ -29,6 +29,13 @@ namespace CandidateHub.Infrastructure.Persistence
             return result;
         }
 
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate,
+                                            CancellationToken cancellationToken)
+        {
+            var result = await _dbSet.AnyAsync(predicate, cancellationToken);
+            return result;
+        }
+
         public async Task<TKey> AddAsync(TEntity entity, CancellationToken cancellationToken)
         {
             await _dbSet.AddAsync(entity, cancellationToken);
