@@ -85,28 +85,31 @@ namespace CandidateHub.Application.Candidates.Commands
         public UpsertCondidateValidator()
         {
             RuleFor(r => r.FirstName)
-                .NotEmpty()
-                .WithMessage("First name is required.")
                 .MinimumLength(2)
                 .WithMessage("Minimum character limit is 2.")
                 .MaximumLength(255)
-                .WithMessage("Maximum character limit is 255.");
+                .WithMessage("Maximum character limit is 255.")
+                .When(w => !string.IsNullOrEmpty(w.FirstName))
+                .NotEmpty()
+                .WithMessage("First name is required.");
 
             RuleFor(r => r.LastName)
-                .NotEmpty()
-                .WithMessage("Last name is required.")
                 .MinimumLength(2)
                 .WithMessage("Minimum character limit is 2.")
                 .MaximumLength(255)
-                .WithMessage("Maximum character limit is 255.");
+                .WithMessage("Maximum character limit is 255.")
+                .When(w => !string.IsNullOrEmpty(w.LastName))
+                .NotEmpty()
+                .WithMessage("Last name is required.");
 
             RuleFor(r => r.Email)
-                .NotEmpty()
-                .WithMessage("Email is required.")
                 .EmailAddress()
                 .WithMessage("Invalid email address.")
                 .MaximumLength(255)
-                .WithMessage("Maximum character limit is 255.");
+                .WithMessage("Maximum character limit is 255.")
+                .When(w => !string.IsNullOrEmpty(w.Email))
+                .NotEmpty()
+                .WithMessage("Email is required.");
 
             RuleFor(r => r.PhoneNumber)
                 .Matches(@"^\+?[1-9]\d{1,14}$")
@@ -114,8 +117,6 @@ namespace CandidateHub.Application.Candidates.Commands
                 .When(candidate => !string.IsNullOrEmpty(candidate.PhoneNumber));
 
             RuleFor(r => r.CallTimeInterval)
-                .MaximumLength(50)
-                .WithMessage("Maximum character limit is 50.")
                 .Must(m =>
                 {
                     var times = m.Split('-');
@@ -153,10 +154,11 @@ namespace CandidateHub.Application.Candidates.Commands
                 .When(w => !string.IsNullOrEmpty(w.GitHubUrl));
 
             RuleFor(r => r.Comments)
-                .NotEmpty()
-                .WithMessage("Comments are required.")
                 .MinimumLength(25)
-                .WithMessage("Minimum character limit is 25.");
+                .WithMessage("Minimum character limit is 25.")
+                .When(w => !string.IsNullOrEmpty(w.Comments))
+                .NotEmpty()
+                .WithMessage("Comments are required.");
         }
     }
 }
